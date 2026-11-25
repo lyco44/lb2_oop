@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double a, b, h, y;
+
+    cout << "Enter a, b, h: ";
+    cin >> a >> b >> h;
+
+    if (a < 0 || a > b || h <= 0)
+    {
+        cout << "Error";
+        return 0;
+    }
+
+    cout << "---------------------------" << endl;
+    cout << setw(12) << "X" << setw(12) << "Y" << endl;
+    cout << "---------------------------" << endl;
+
+    for (double x = a; x <= b; x += h)
+    {
+        y = a * b + pow(sin(x), 2) - sqrt(x);
+
+        cout << fixed << setprecision(4);
+        cout << setw(12) << x << setw(12) << y << endl;
+    }
+
+    cout << "---------------------------" << endl;
+
+    return 0;
+}
